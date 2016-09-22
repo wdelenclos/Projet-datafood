@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DataFood</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1 id="heure"></h1>
+            <nav class="links">
+                <ul>
+                    
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Rechercher</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Menu -->
+        <section id="menu">
+            <section>
+                <form class="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Rechercher" />
+                </form>
+            </section>
+            <section>
+                <ul class="links">
+                    <li>
+                        <a href="#infobox">
+                            <h3>Passer en mode commande</h3>
+                            <p>Retourne au menu d'enregistrement des commandes</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- Actions -->
+            <section>
+                <ul class="actions vertical">
+                    <li><a href="index.html" class="button big fit">Vers l'interface admin</a></li>
+                </ul>
+            </section>
+        </section>
+        <!-- Main -->
+        <div id="main">
+          <h2>
+ C'est au tour de ... <i class="fa fa-arrow-down"></i>
+</h2>
+           <div id="commandes">
+           
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <section id="sidebar">
+            <section id="intro">
+                
+                <header>
+                    <h2 class="restau">DataFood</h2>
+                    <p>Visualisez les commandes
+                        <a href="http://wdeloenclos.eu"> </a>
+                    </p>
+                </header>
+            </section>
+            
+        </section>
+    </div>
+    <!-- Script pour la gestion du menu -->
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/commandes.js"></script>
+    <script type="text/javascript" src="assets/js/moteurclient.js"></script>
+    
+    <!-- Scripts pour l'UI -->
+    <script src="assets/js/jquery-2.2.0.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script> 
+    
+   setTimeout(function(){
+   window.location.reload(1);
+}, 7000);
+        
+        
+    function showTime(){ 
+    var myDate = new Date(); 
+    var time = myDate.getTime(); 
+    var hour = myDate.getHours(); 
+    var minute = myDate.getMinutes(); 
+    var second = myDate.getSeconds(); 
+    if (hour < 10) { hour = "0" + hour; } 
+    if (minute < 10) { minute = "0" + minute; } 
+    if (second < 10) { second = "0" + second; } 
+    var theDate = " " + hour + ":" + minute + ":" + second; 
+    document.querySelector('#heure').innerHTML=theDate;
+	setTimeout("showTime();",1000);
+  }
+showTime();
+window.onload=function() {
+  afficher();
+  setInterval(afficher,1000);
+}
+
+
+
+    </script>
+    
+</body>
+</html>

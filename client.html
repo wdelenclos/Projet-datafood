@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>DataFood</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="#" class="restau">DataFood</a></h1>
+            <nav class="links">
+                <ul>
+                    <li><a href="#infobox">Commander</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Rechercher</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Menu -->
+        <section id="menu">
+            <!-- Search -->
+            <section>
+                <form class="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Rechercher" />
+                </form>
+            </section>
+            <!-- Links -->
+            <section>
+                <ul class="links">
+                    <li>
+                        <a href="#infobox">
+                            <h3>Commander</h3>
+                            <p>Faire son choix</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="vueclient.html">
+                            <h3>Passer en mode panneau</h3>
+                            <p>Active la visualisation des commandes</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- Actions -->
+            <section>
+                <ul class="actions vertical">
+                    <li><a href="index.html" class="button big fit">Vers l'interface admin</a></li>
+                </ul>
+            </section>
+        </section>
+        <!-- Main -->
+        <div id="main">
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="#">Interface de commande</a></h2>
+                        <p>cliquez sur <i class="fa fa-plus"></i> pour ajouter un produit à la commande</p>
+
+                    </div>
+                </header>
+                <section>
+                    <div class="table-wrapper">
+                        
+                        <div id="infobox">
+                            
+                            <a href="">
+                                <div class="error">
+                                    <p>Sauvegarde par défault rechargée</p>
+                                </div>
+                            </a>
+                        </div>
+                        <select id="type" onchange="affichageMenu();">
+                            
+                        </select>
+                        <br/>
+                        <p>Selectionnez vos plats :</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Ingrédients</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listing">
+
+                            </tbody>
+                        </table>
+                        <hr/>
+                        <p>Résumé de la commande : </p>
+
+
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Ingrédients</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody class="commande">
+
+                            </tbody>
+                            <tbody>
+                                <tr>
+
+                                    <td>Total:</td>
+                                    <td><span id="total">0</span> €</td>
+                                    <td>
+                                        <button onclick="commander()">Commander <i class="fa fa-shopping-basket"></i></button>
+                                    </td>
+                                    <td>
+                                        <button onclick="annul('all')">Annuler <i class="fa fa-times"></i></button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <hr/>
+            </article>
+        </div>
+        <!-- Sidebar -->
+        <section id="sidebar">
+            <!-- About -->
+            <!-- Intro -->
+            <section id="intro">
+                
+                <header>
+                    <h2 class="restaurants">DataFood</h2>
+                    <p>L'assistant des restaurateurs
+                        <a href="http://wdeloenclos.eu"> </a>
+                    </p>
+                </header>
+            </section>
+            <!-- Mini Posts -->
+            <section class="blurb">
+                <h2>Les commandes</h2>
+                <p>Nous traitons actuellement ...</p>
+                <section>
+                    <div id="commandes" class="mini-posts">
+
+                        <!-- Mini Post -->
+
+                    </div>
+                </section>
+            </section>
+        </section>
+    </div>
+    <!-- Script pour la gestion du menu -->
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/commandes.js"></script>
+    <script type="text/javascript" src="assets/js/moteurclient.js"></script>
+    <!-- Scripts pour l'UI -->
+    <script src="assets/js/jquery-2.2.0.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

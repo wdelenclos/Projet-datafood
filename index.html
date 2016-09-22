@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DataFood</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a class="restau" href="#">DataFood</a></h1>
+            <nav class="links">
+                <ul>
+                    <li><a onclick="showadd()" href="#edit">Ajouter un produit</a></li>
+                    <li><a onclick="showadd()" href="client.html">commander</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Rechercher</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Menu -->
+        <section id="menu">
+            <!-- Links -->
+            <section>
+                <ul class="links">
+                    <li>
+                        <a href="#infobox">
+                            <h3>Liste des Recettes</h3>
+                            <p>Voir les recettes enregistrées</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#edit">
+                            <h3>Ajouter</h3>
+                            <p>Editer les recettes</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- Actions -->
+            <section>
+                <ul class="actions vertical">
+                    <li><a href="client.html" class="button big fit">Vers l'interface commande</a></li>
+                </ul>
+                
+            </section>
+             <!-- Version -->
+             <section>
+               <ul class="links">
+                    <li>
+                        <a href="http://wdelenclos.eu">
+                            <p>Développé par W.Delenclos</p>
+                        </a>
+                        <a href="notedeversion.html">
+                            <p>Version 1.1.2</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </section>
+        </section>
+        <!-- Main -->
+        <div id="main">
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="#">Menu & configuration</a></h2>
+                        <p>Interface administration</p>
+                    </div>
+                </header>
+                <section>
+                    <div class="table-wrapper">
+                        <div id="infobox">
+
+                            <a href="">
+                                <div class="error">
+                                    <p>Sauvegarde par défault rechargée</p>
+                                </div>
+                            </a>
+                        </div>
+                        <select id="type" onchange="affichageMenu();">
+                            <option value="Pizzas">Pizzas</option>
+                            <option value="Pâtes">Pâtes</option>
+                        </select>
+                        <br/>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Decriptions</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listing">
+
+                            </tbody>
+                        </table>
+                        <div class="12u$">
+                            <ul class="actions">
+                                <button onclick="showadd()"><i class="fa fa-plus"></i></button>
+                                <button onclick="vider()"><i class="fa fa-ban"></i></button>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <hr/>
+                <section id="edit">
+                    <h3>Ajouter un produit</h3>
+                    <form method="post" action="#">
+                        <div class="row uniform">
+                            <div class="6u 12u$(xsmall)">
+                                <input type="text" name="name" id="name" value="" placeholder="Nom" />
+                            </div>
+                            <div class="6u$ 12u$(xsmall)">
+                                <input type="text" name="price" id="price" value="" placeholder="Prix" />
+                            </div>
+                            <div class="6u$ 12u$(xsmall)">
+                                <select id="type2" onchange="affichageMenu();">
+                                   
+                                </select>
+                            </div>
+                            <div class="12u$">
+                                <br/>
+                                <h4>Ingrédients/description</h4>
+                                <input type="text" name="recipe" id="recipe" value="" placeholder="Tomate, olives, margarita" />
+                            </div>
+                            <div class="12u$">
+                                <ul class="actions">
+                                    <li>
+                                        <input onclick="ajout()" id="submit" type="submit" value="Ajouter" />
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                
+                <section id="plats">
+                    <h3>Ajouter des types de plats</h3>
+                    <table>
+                            <thead>
+                                <tr>
+                                    <th>Types</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="platslist">
+
+                            </tbody>
+                        </table>
+                        <input type="text" name="recipe" id="aditc" value="" placeholder="Vins" />
+                        <input onclick="ajouta()" id="subit" type="submit" value="Ajouter" />
+                </section>
+                <hr/>
+                <section id="entreprise">
+                    <h3>Nom du restaurant</h3>
+                    <form method="post" action="#">
+                        <div class="row uniform">
+                            <div class="6u 12u$(xsmall)">
+                                <span id="nomaAfficher"><input type="text" id="resto" value="" placeholder="Nom à afficher" /></span>
+                                 <input onclick="nommer()" type="submit" value="Renommer" />
+                            </div>
+                          
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </div>
+        <!-- Sidebar -->
+        <section id="sidebar">
+            <section id="intro">
+                <a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+                <header>
+                    <h2 class="restaurants">DataFood</h2>
+                    <p>L'assistant des restaurateurs
+                        <a href="http://wdeloenclos.eu"> </a>
+                    </p>
+                </header>
+            </section>
+            <!-- Espace commande -->
+            <section class="blurb">
+                <h2>Les commandes</h2>
+                <p>(Cliquez dessus pour supprimer)</p>
+                <section>
+                    <div id="commandes" class="mini-posts">
+
+                        <!-- Ici s'affiche les commandes -->
+                       
+                    </div>
+                </section>
+            </section>
+        </section>
+    </div>
+    <!-- Script pour la gestion du menu -->
+    <script type="text/javascript" src="assets/js/commandes.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/moteuradmin.js"></script>
+    
+    <!-- Scripts pour l'UI -->
+    <script src="assets/js/jquery-2.2.0.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

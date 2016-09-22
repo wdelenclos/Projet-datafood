@@ -1,0 +1,128 @@
+------------------------------------------------------
+******************************************************
+*              Documentation du Javascript           *
+*                et fonctionnement                   *
+*                   W.Delenclos                      *
+******************************************************
+------------------------------------------------------
+
+
+------------------------------------------------------
+          // menu.js <<>> Menu de base //
+------------------------------------------------------
+
+function menu():
+        - Contient le menu à mettre par défaut le Stringify et l'envoi au localStorage ...
+
+
+
+
+------------------------------------------------------
+   ---// moteuradmin.js <<>> Moteur de gestion //----
+------------------------------------------------------
+PART 1 Vérification de l'existance de la sauvegarde 
+-----
+        if{
+          Verifie si il existe dans le localstrage un élément de clé Menu ou si il n'est pas null ou = 0 ...
+          
+          if{
+            Demande si l'utilisateur veut reset le menu & affiche un message
+          }
+          else { 
+            Affiche un message d'abscence de menu 
+          }
+        }
+        
+       
+PART 2 Lecture du menu par type
+-----
+function affichageParType(type): 
+Se balade dans le localstorage et génère le contenu html en fonction du type de produit.
+
+
+PART 3 Système d'affichage
+-----
+function affichageMenu():
+En fonction de ce qui est selectionné dans #type va innerHTML l'affichage par type généré plus haut.
+        
+
+PART 4 Ajouter un produit
+-----
+function ajout():
+Récupère le menu en localstorage, met dans des variables les éléments du formualire, les push dans le tableau JSON du menu et le renvoie.
+Génère aussi une info box.
+
+
+PART 5 Supprimer un produit
+------
+function supp(i):
+Recupère l'ID i généré par dnas l'affichage de la ligne séléctionnée, et s'en sert pour splice de 1 à partir de l'élément du tableau d'ID i
+stringify et le renvoi. 
+Fait appel à l'affichage et génère une infobox.
+
+
+PART 6 Lancer l'edition d'un produit 
+------
+function edit(i):
+Génère en fonction de l'ID i un formulaire du même id sur la ligné dédié ( pas encore de bouton annuler)
+
+
+PART 7 Faire l'edition du produit 
+------
+function modifier(i):
+Récupère les values du formulaire généré par edit() et modifie le tableua JSON du menu pour l'ID concerné. le réecrit et renvoi.
+Fait appel à l'affichage et génère une infobox.
+
+
+PART 8 Fonction de reset du menu et bouton ajouter 
+------
+function vider():
+Demande confirmation et supprime l'item Menu du local storage, recharge la page.
+Génère sinon une infobox "annulé".
+
+function showadd(): 
+Bouton pour afficher le formulaire ...
+
+------------------------------------------------------
+   ---// moteurclient.js <<>> Moteur de gestion //----
+------------------------------------------------------
+
+PART 1 Lecture du menu par type
+-----
+Affichage du menu sans possibilité d'edition
+
+
+
+PART 2 Système d'affichage
+-----
+Affichage du menu en focntion du type choisis dans l'input
+
+
+PART 3 Lancer la commande d'un produit 
+-----
+InnerHTML des boutons de confirmation.
+
+
+Part 4 ajout de la commande
+-----
+Push dans l'array et réecrit dasn le local storage
+
+
+PART 5 Annuler commande
+-----
+Refait un inner.html du menu
+
+
+
+
+------------------------------------------------------
+    -----// jquery-2.2.0.js <<>> Jquery 2.2.0 //-----
+------------------------------------------------------
+    
+Documentation sur le site officiel
+
+------------------------------------------------------
+skel.min.js // main.js // util.js <<>> Pour l'UI / UX 
+------------------------------------------------------
+
+Non documenté ( pas mon code )
